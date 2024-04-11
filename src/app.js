@@ -15,7 +15,7 @@ app.set('view engine', 'hbs');
 app.set("views", "views");
 
 // DB connect
-mongoose.connect("mongodb://localhost/website_tut", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb://localhost/website_tut")
     .then(() => {
         console.log("DB connected");
         app.listen(process.env.PORT || 8000, () => {
