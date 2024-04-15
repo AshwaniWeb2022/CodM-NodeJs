@@ -17,3 +17,6 @@ app.set('view engine', 'hbs');
 // app.set("views", "views");
 app.set('views',  'views');
 
+app.listen(PORT, () => {
+    console.log(`Example app listening on port ${PORT}`)
+  })
