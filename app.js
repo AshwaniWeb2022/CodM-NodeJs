@@ -3,7 +3,7 @@ const hbs = require("hbs");
 const mongoose = require("mongoose");
 const app = express();
 
-const routes = require('./routes/main');
+const routes = require('./src/routes/main');
 
 app.use('/', routes);
 
