@@ -2,21 +2,19 @@ const express = require("express");
 const hbs = require("hbs");
 const mongoose = require("mongoose");
 const app = express();
-app.listen(process.env.PORT || 8000, () => {
-    console.log("Server started");
-});
+const PORT = process.env.PORT || 8000;
+
 const routes = require('./src/routes/main');
 
 app.use('/', routes);
 
-// static/css/image/
-// app.use('/static', express.static("public"));
-app.use(express.static(__dirname + '/public'))
-// view engine
+// Serve static files
+app.use(express.static(__dirname + '/public'));
+
+// View engine setup
 app.set('view engine', 'hbs');
-// app.set("views", "views");
-app.set('views',  'views');
+app.set('views', 'views');
 
 app.listen(PORT, () => {
-    console.log(`Example app listening on port ${PORT}`)
-  })
+    console.log(`Server started on port ${PORT}`);
+});
